@@ -1,0 +1,11 @@
+§§grep helpers:
+§§ -A: allgemein
+§§ -Q: Quelle
+§§ -G: Geschichte
+
+
+-Q1 Diplomarbeit zum Thema
+-Q1 http://www.algo.uni-konstanz.de/publications/diplom-hoefer-04.pdf
+  -A -Q1 Topologische Fragen zur Entwicklung des Internets -> S.9
+  
+  
