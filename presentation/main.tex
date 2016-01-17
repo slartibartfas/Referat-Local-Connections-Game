@@ -1,5 +1,6 @@
-\documentclass{beamer}
-
+\documentclass[mathserif, aspectratio=169]{beamer}
+\usetheme{Hannover}
+\usecolortheme{dolphin}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -9,7 +10,7 @@
 \usepackage{lmodern}
 \usepackage{beamerthemeshadow}
 
-
+\beamertemplatenavigationsymbolsempty
 %\beameruncovermixins{\opaqueness<1>{25}}{\opaqueness<2>{15}}
 
 \title{local connection game}
@@ -44,27 +45,55 @@ Ungerichteter Graph\>Gerichteter Graph
 
 \section{Simulation des Internets durch Graphentheorie}
 \begin{frame}
-\begin{tabbing}
 Zum besseren Verst\"andnis der (In)Effektivit\"at von Computernetzwerken, versucht man diese mithilfe der Graphentheorie zu untersuchen.
+\begin{tabbing}
 \hspace{5cm}\=\\
 Verbundene Rechner \>$\longrightarrow$Knoten\\
-Verbindungen\>$\longrightarrow$Kanten\\
+Verbindungen\>$\longrightarrow$Kanten\\\\
+Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003) \\\>(local connection game)
 \end{tabbing}
-
 \end{frame}
-\begin{frame}[plain]
+\begin{frame}
 \begin{block}
 {Local Connection Game}
 \begin{itemize}
         \item Der Netzwerkgraph ist ungerichtet
         \item Jeder Knoten hat Kosten
         \item Jeder Knoten handelt eigenn\"utzig, versucht also seine eigenen Kosten zu reduzieren.
-        \item Jeder Knoten kann Kanten (Verbindungen) errichten, die jeder nutzen kann, eine Kante kostet $\alpha$
-        \item Mit der Distanz zweier Knoten $dist(a,b)$ bezeichnet man die Anzahl der (existierenden) Kanten, die f\"ur eine Verbindung ben\"otigt werden, ist eine Verbindung nicht m;glich, ist die Distanz $\infty$
-        \item Jeder Knoten bezahlt f\"ur alle selbst errichteten Kanten $+$ die Distanzen zu allen anderen Knoten
+        \item Jeder Knoten kann Kanten (Verbindungen) kaufen, die dann jeder nutzen kann, eine Kante kostet $\alpha$
+        \item Mit der Distanz zweier Knoten $dist(a,b)$ bezeichnet man die Anzahl der (existierenden) Kanten, die f\"ur eine Verbindung ben\"otigt werden, ist eine Verbindung nicht m\"oglich, ist die Distanz $\infty$
+        \item Jeder Knoten bezahlt f\"ur alle selbst gekauften Kanten $+$ die jeweiligen Distanzen zu allen anderen Knoten
         \item Mit den sozialen Kosten bezeichnet man die Summe der Kosten aller Knoten. Sie sind ein Richtwert f\"ur die Effzienz des Netzwerks.
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}
+{In Formeln}
+Kosten eines Knotens u:
+\[k(u)=\alpha n_u + {\sum}_v dist(u,v)\]
+Soziale Kosten:
+\[{\sum}_u k(u)= \alpha n + {\sum}_{u\not=v} dist (u,v)\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+{Optimale L\"osungen}
+%\begin{block}{Optimale L\"osungen}
+\begin{columns}
+\column{.5\textwidth}
+\textbf{$\alpha \leq 1$}\\
+Vollst\"andiger Graph\\
+\includegraphics[width=5cm]{pics/Complete_graph_example.png}
+\column{.5\textwidth}
+\textbf{$\alpha \geq 2$}\\
+Stern\\
+\includegraphics[width=5cm]{pics/star.png}
+\end{columns}
+
+
+%\end{block}
 \end{frame}
 
 
