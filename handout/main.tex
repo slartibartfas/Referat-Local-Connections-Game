@@ -1,6 +1,4 @@
-\documentclass[mathserif, aspectratio=169]{beamer}
-\usetheme{Hannover}
-\usecolortheme{dolphin}
+\documentclass[a4paper]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -9,10 +7,12 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{lmodern}
-\usepackage{beamerthemeshadow}
+\headheight14pt
+\topmargin0cm
+\oddsidemargin0cm
+\textwidth16cm
+\textheight22cm
 
-\beamertemplatenavigationsymbolsempty
-%\beameruncovermixins{\opaqueness<1>{25}}{\opaqueness<2>{15}}
 
 \title{local connection game}
 \author{Tobias Guggenmos}
@@ -23,17 +23,10 @@
 
 
 \begin{document}
-\begin{frame}
-\titlepage
-\end{frame}
-
-\begin{frame}
-\tableofcontents
-\end{frame}
-
+\maketitle
+\vspace{1cm}
 \section{Einf\"uhrung in die Graphentheorie}
 
-\begin{frame}
 \begin{Def}
 Ein \textbf{Graph} ist eine abstrakte Struktur die eine Menge von Objekten (\textbf{Knoten}) zusammen mit den zwischen diesen Objekten bestehenden paarweisen Verbindungen (\textbf{Kanten}) repr\"asentiert. Kanten k\"onnen \textbf{gerichtet} oder \textbf{ungerichtet} sein.
 \end{Def}
@@ -42,10 +35,8 @@ Ein \textbf{Graph} ist eine abstrakte Struktur die eine Menge von Objekten (\tex
 \=\includegraphics[height=4cm]{pics/directed-graph.png}\\
 Ungerichteter Graph\>Gerichteter Graph
 \end{tabbing}
-\end{frame}
-
+\vspace{1cm}
 \section{Simulation des Internets durch Graphentheorie}
-\begin{frame}
 Zum besseren Verst\"andnis der (In)Effektivit\"at von Computernetzwerken, versucht man diese mithilfe der Graphentheorie zu untersuchen.
 \begin{tabbing}
 \hspace{5cm}\=\\
@@ -53,10 +44,6 @@ Verbundene Rechner \>$\longrightarrow$Knoten\\
 Verbindungen\>$\longrightarrow$Kanten\\\\
 Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003) \\\>(local connection game)
 \end{tabbing}
-\end{frame}
-\begin{frame}
-\begin{block}
-{Local Connection Game}
 \begin{itemize}
         \item Der Netzwerkgraph ist ungerichtet
         \item Jeder Knoten hat Kosten
@@ -66,50 +53,42 @@ Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003)
         \item Jeder Knoten bezahlt f\"ur alle selbst gekauften Kanten $+$ die jeweiligen Distanzen zu allen anderen Knoten
         \item Mit den sozialen Kosten bezeichnet man die Summe der Kosten aller Knoten. Sie sind ein Richtwert f\"ur die Effzienz des Netzwerks.
 \end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}
-\begin{block}
-{In Formeln}
+\vspace{1cm}
+\textbf{In Formeln}\\
 Kosten eines Knotens u:
 \[k(u)=\alpha n_u + {\sum}_v dist(u,v)\]
 Soziale Kosten:
 \[{\sum}_u k(u)= \alpha n + {\sum}_{u\not=v} dist (u,v)\]
-\end{block}
-\end{frame}
+\vspace{1cm}
 \section{Erkentnisse}
-\begin{frame}
-{Optimale L\"osungen}
-%\begin{block}{Optimale L\"osungen}
-\begin{columns}
-\column{.5\textwidth}
+\textbf{Optimale L\"osungen}
+\begin{tabbing}
+\parbox{5cm}{
 \textbf{$\alpha \leq 1$}\\
 Vollst\"andiger Graph\\
 Nash Gleichgewicht\\
 \includegraphics[width=5cm]{pics/Complete_graph_example.png}
-\column{.5\textwidth}
+}
+\parbox{5cm}{
 \textbf{$\alpha \geq 2$}\\
 Stern\\
 Nash Gleichgewicht f\"ur $\alpha \geq 1$ \\
 \includegraphics[width=5cm]{pics/star.png}
-\end{columns}
-\begin{exampleblock}
+}
+\end{tabbing}
+\vspace{1cm}
+\begin{Def}
 {Nash Gleichgewicht}
 Kein Knoten hat einen Anlass, am Graphen etwas zu \"andern, da es ihm keinerlei Vorteil bringt.
-\end{exampleblock}
-
-%\end{block}
-\end{frame}
-\begin{frame}
-{Quellen}
-\url{http://www.cs.cornell.edu/~eva/agtchap19.pdf}
-\url{http://www.algo.uni-konstanz.de/publications/diplom-hoefer-04.pdf}
-\url{https://de.wikipedia.org/wiki/Nash-Gleichgewicht}
-\url{https://de.wikipedia.org/wiki/Sterngraph}
+\end{Def}
+\vspace{1cm}
+\section*{Quellen}
+\url{http://www.cs.cornell.edu/~eva/agtchap19.pdf}\\
+\url{http://www.algo.uni-konstanz.de/publications/diplom-hoefer-04.pdf}\\
+\url{https://de.wikipedia.org/wiki/Nash-Gleichgewicht}\\
+\url{https://de.wikipedia.org/wiki/Sterngraph}\\
 \url{https://de.wikipedia.org/wiki/Graph_(Graphentheorie)}\\
 \url{https://en.wikipedia.org/wiki/Graph_(mathematics)}\\
 Alle Seiten Abgerufen am 17.1.2016
-\end{frame}
 
 \end{document}
