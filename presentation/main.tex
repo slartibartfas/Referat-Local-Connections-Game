@@ -12,9 +12,60 @@
 
 %\beameruncovermixins{\opaqueness<1>{25}}{\opaqueness<2>{15}}
 
-\title{Zahlentheorie}
+\title{local connection game}
 \author{Tobias Guggenmos}
 
 \newtheorem{Def}{Definition}
 \newtheorem{Ax}{$\mathfrak{Axiom}$}
 \newtheorem{Sa}{Satz}
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Einf\"uhrung in die Graphentheorie}
+
+\begin{frame}
+\begin{Def}
+Ein \textbf{Graph} ist eine abstrakte Struktur die eine Menge von Objekten (\textbf{Knoten}) zusammen mit den zwischen diesen Objekten bestehenden paarweisen Verbindungen (\textbf{Kanten}) repr\"asentiert. Kanten k\"onnen \textbf{gerichtet} oder \textbf{ungerichtet} sein.
+\end{Def}
+\begin{tabbing}
+\includegraphics[height=4cm]{pics/6n-graf.png}
+\=\includegraphics[height=4cm]{pics/directed-graph.png}\\
+Ungerichteter Graph\>Gerichteter Graph
+\end{tabbing}
+\end{frame}
+
+\section{Simulation des Internets durch Graphentheorie}
+\begin{frame}
+\begin{tabbing}
+Zum besseren Verst\"andnis der (In)Effektivit\"at von Computernetzwerken, versucht man diese mithilfe der Graphentheorie zu untersuchen.
+\hspace{5cm}\=\\
+Verbundene Rechner \>$\longrightarrow$Knoten\\
+Verbindungen\>$\longrightarrow$Kanten\\
+\end{tabbing}
+
+\end{frame}
+\begin{frame}[plain]
+\begin{block}
+{Local Connection Game}
+\begin{itemize}
+        \item Der Netzwerkgraph ist ungerichtet
+        \item Jeder Knoten hat Kosten
+        \item Jeder Knoten handelt eigenn\"utzig, versucht also seine eigenen Kosten zu reduzieren.
+        \item Jeder Knoten kann Kanten (Verbindungen) errichten, die jeder nutzen kann, eine Kante kostet $\alpha$
+        \item Mit der Distanz zweier Knoten $dist(a,b)$ bezeichnet man die Anzahl der (existierenden) Kanten, die f\"ur eine Verbindung ben\"otigt werden, ist eine Verbindung nicht m;glich, ist die Distanz $\infty$
+        \item Jeder Knoten bezahlt f\"ur alle selbst errichteten Kanten $+$ die Distanzen zu allen anderen Knoten
+        \item Mit den sozialen Kosten bezeichnet man die Summe der Kosten aller Knoten. Sie sind ein Richtwert f\"ur die Effzienz des Netzwerks.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\end{document}
