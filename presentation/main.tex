@@ -1,5 +1,5 @@
 \documentclass[mathserif, aspectratio=169]{beamer}
-\usetheme{Hannover}
+\usetheme{Warsaw}
 \usecolortheme{dolphin}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -49,8 +49,10 @@ Ungerichteter Graph\>Gerichteter Graph
 Zum besseren Verst\"andnis der (In)Effektivit\"at von Computernetzwerken, versucht man diese mithilfe der Graphentheorie zu untersuchen.
 \begin{tabbing}
 \hspace{5cm}\=\\
+\pause
 Verbundene Rechner \>$\longrightarrow$Knoten\\
 Verbindungen\>$\longrightarrow$Kanten\\\\
+\pause
 Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003) \\\>(local connection game)
 \end{tabbing}
 \end{frame}
@@ -58,12 +60,19 @@ Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003)
 \begin{block}
 {Local Connection Game}
 \begin{itemize}
+\pause
         \item Der Netzwerkgraph ist ungerichtet
+\pause
         \item Jeder Knoten hat Kosten
+\pause
         \item Jeder Knoten handelt eigenn\"utzig, versucht also seine eigenen Kosten zu reduzieren.
+\pause
         \item Jeder Knoten kann Kanten (Verbindungen) kaufen, die dann jeder nutzen kann, eine Kante kostet $\alpha$
+\pause
         \item Mit der Distanz zweier Knoten $dist(a,b)$ bezeichnet man die Anzahl der (existierenden) Kanten, die f\"ur eine Verbindung ben\"otigt werden, ist eine Verbindung nicht m\"oglich, ist die Distanz $\infty$
+\pause
         \item Jeder Knoten bezahlt f\"ur alle selbst gekauften Kanten $+$ die jeweiligen Distanzen zu allen anderen Knoten
+\pause
         \item Mit den sozialen Kosten bezeichnet man die Summe der Kosten aller Knoten. Sie sind ein Richtwert f\"ur die Effzienz des Netzwerks.
 \end{itemize}
 \end{block}
@@ -72,10 +81,13 @@ Einfaches Beispiel:\>simple network formation game of\\\> Fabrikant et al.(2003)
 \begin{frame}
 \begin{block}
 {In Formeln}
+\pause
 Kosten eines Knotens u:
-\[k(u)=\alpha n_u + {\sum}_v dist(u,v)\]
+\pause
+\[k(u)=\alpha n_u + \pause {\sum}_v dist(u,v)\]
+\pause
 Soziale Kosten:
-\[{\sum}_u k(u)= \alpha n + {\sum}_{u\not=v} dist (u,v)\]
+\[{\sum}_u k(u)\pause= \alpha n + {\sum}_{u\not=v} dist (u,v)\]
 \end{block}
 \end{frame}
 \section{Erkentnisse}
@@ -88,12 +100,14 @@ Soziale Kosten:
 Vollst\"andiger Graph\\
 Nash Gleichgewicht\\
 \includegraphics[width=5cm]{pics/Complete_graph_example.png}
+\pause
 \column{.5\textwidth}
 \textbf{$\alpha \geq 2$}\\
 Stern\\
 Nash Gleichgewicht f\"ur $\alpha \geq 1$ \\
 \includegraphics[width=5cm]{pics/star.png}
 \end{columns}
+\pause
 \begin{exampleblock}
 {Nash Gleichgewicht}
 Kein Knoten hat einen Anlass, am Graphen etwas zu \"andern, da es ihm keinerlei Vorteil bringt.
